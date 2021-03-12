@@ -4,7 +4,7 @@
   <div class="center-block homepage-section" style="text-align: center;">
     <h1 class="skills-header">All About Mike!</h1>
     <div class="col-lg-3 my-picture-container">
-      <img src=""></img>
+      <img class="avatar-photo" src="{% static 'me.png' %}"></img>
     </div>
     <div class="col-lg-8 about-me-1">
       Hello!  Thanks for viewing my portfolio.  My name is Michael Lopez, and I
@@ -26,6 +26,13 @@
       the end of 2020.  I now prefer developing sites using Django for the backend
       and have worked on two projects utilizing it.
     </div>
+    <div class="col-lg-10 about-me-2">
+      When I'm not writing code, I enjoy spending times outdoors, taking walks
+      through forests or by lakes and watching the animals.  I also enjoy cooking,
+      playing video games and creating art, both traditionally and digitally.
+      I love making pixel art the most, as I find it's a great way to relieve
+      stress.
+    </div>
   </div>
   <div class="center-block homepage-section" style="text-align: center;">
     <h1>Resume</h1>
@@ -38,13 +45,117 @@
   <div class="center-block homepage-section" style="text-align: center;">
     <h1 class="skills-header">Skills</h1>
     <div class="col-lg-4 skill-block">
-      <h3>Learned</h3>
+      <h3 class="skills-sub-header">Learned</h3>
+      <div class="skill-container">
+        <img class="skill-icon" src="{% static 'skills/atom.png' %}"></img>
+        <br><b>Atom</b>
+      </div>
+      <div class="skill-container">
+        <img class="skill-icon" src="{% static 'skills/bootstrap.png' %}"></img>
+        <br><b>Bootstrap</b>
+      </div>
+      <div class="skill-container">
+        <img class="skill-icon" src="{% static 'skills/css.png' %}"></img>
+        <br><b>CSS</b>
+      </div>
+      <br>
+      <div class="skill-container">
+        <img class="skill-icon" src="{% static 'skills/django.png' %}"></img>
+        <br><b>Django</b>
+      </div>
+      <div class="skill-container">
+        <img class="skill-icon" src="{% static 'skills/github.png' %}"></img>
+        <br><b>GitHub</b>
+      </div>
+      <div class="skill-container">
+        <img class="skill-icon" src="{% static 'skills/heroku.png' %}"></img>
+        <br><b>Heroku</b>
+      </div>
+      <br>
+      <div class="skill-container">
+        <img class="skill-icon" src="{% static 'skills/html.png' %}"></img>
+        <br><b>HTML</b>
+      </div>
+      <div class="skill-container">
+        <img class="skill-icon" src="{% static 'skills/java.png' %}"></img>
+        <br><b>Java</b>
+      </div>
+      <div class="skill-container">
+        <img class="skill-icon" src="{% static 'skills/javascript.png' %}"></img>
+        <br><b>JavaScript</b>
+      </div>
+      <br>
+      <div class="skill-container">
+        <img class="skill-icon" src="{% static 'skills/linux.png' %}"></img>
+        <br><b>Linux</b>
+      </div>
+      <div class="skill-container">
+        <img class="skill-icon" src="{% static 'skills/python.png' %}"></img>
+        <br><b>Python</b>
+      </div>
+      <div class="skill-container">
+        <img class="skill-icon" src="{% static 'skills/rails.png' %}"></img>
+        <br><b>R-o-R</b>
+      </div>
+      <br>
+      <div class="skill-container">
+        <img class="skill-icon" src="{% static 'skills/ruby.png' %}"></img>
+        <br><b>Ruby</b>
+      </div>
+      <div class="skill-container">
+        <img class="skill-icon" src="{% static 'skills/windows.png' %}"></img>
+        <br><b>Windows</b>
+      </div>
     </div>
     <div class="col-lg-3 skill-block">
-      <h3>Need Work</h3>
+      <h3 class="skills-sub-header">Worked With</h3>
+      <div class="skill-container2">
+        <img class="skill-icon" src="{% static 'skills/androidstudio.png' %}"></img>
+        <br><b>Android Studio</b>
+      </div>
+      <div class="skill-container2">
+        <img class="skill-icon" src="{% static 'skills/c++.png' %}"></img>
+        <br><b>C++</b>
+      </div>
+      <br>
+      <div class="skill-container2">
+        <img class="skill-icon" src="{% static 'skills/docker.png' %}"></img>
+        <br><b>Docker</b>
+      </div>
+      <div class="skill-container2">
+        <img class="skill-icon" src="{% static 'skills/firebase.png' %}"></img>
+        <br><b>Firebase</b>
+      </div>
+      <br>
+      <div class="skill-container2">
+        <img class="skill-icon" src="{% static 'skills/jquery.png' %}"></img>
+        <br><b>JQuery</b>
+      </div>
+      <div class="skill-container2">
+        <img class="skill-icon" src="{% static 'skills/mysql.png' %}"></img>
+        <br><b>MySQL</b>
+      </div>
+      <br>
+      <div class="skill-container2">
+        <img class="skill-icon" src="{% static 'skills/nodejs.png' %}"></img>
+        <br><b>Node.js</b>
+      </div>
+      <br>
     </div>
     <div class="col-lg-4 skill-block">
-      <h3>Want to Learn</h3>
+      <h3 class="skills-sub-header">Want to Learn</h3>
+      <div class="skill-container">
+        <img class="skill-icon" src="{% static 'skills/angular.png' %}"></img>
+        <br><b>Angular</b>
+      </div>
+      <div class="skill-container">
+        <img class="skill-icon" src="{% static 'skills/aws.png' %}"></img>
+        <br><b>AWS</b>
+      </div>
+      <div class="skill-container">
+        <img class="skill-icon" src="{% static 'skills/react.png' %}"></img>
+        <br><b>React</b>
+      </div>
     </div>
   </div>
   <div class="center-block homepage-section" style="text-align: center;">
