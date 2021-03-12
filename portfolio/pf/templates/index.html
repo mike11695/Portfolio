@@ -1,29 +1,48 @@
 {% extends "base_generic.html" %}
-
+  {% load static %}
 {% block content %}
   <div class="center-block homepage-section" style="text-align: center;">
-    <h1>All About Mike!</h1>
-    <p>dvvfbbbfbffbf</p>
-    <p>dvvfbbbfbffbf</p>
-    <p>dvvfbbbfbffbf</p>
+    <h1 class="skills-header">All About Mike!</h1>
+    <div class="col-lg-3 my-picture-container">
+      <img src=""></img>
+    </div>
+    <div class="col-lg-8 about-me-1">
+      Hello!  Thanks for viewing my portfolio.  My name is Michael Lopez, and I
+      am an inspiring web developer.  My love for web development came from the
+      website Neopets, which allows you to edit your virtual pets home pages
+      using HTML and CSS.  Through designing web pages, I was inspired to go after
+      web development as a career and enrolled in college.  Through college, I
+      learned about programming, using C++ at first but then afterwards learning
+      Java, Ruby, Python and a few other languages.  I began to develop sites
+      in my time after graduating with an associates in Computer Technology at
+      SUNY Jefferson in Watertown, New York.  I used Ruby-on-Rails for the backend
+      of my sites and used HTML/CSS/JavaScript for the frontend.  I was able to
+      build a project for a friend for the very site that got me into web design,
+      Neopets.  Eventually, I went back to college as I decided to switch majors
+      to Computer Science and graduated from SUNY Potsdam with my Bachelors at
+      the end of 2020.  I now prefer developing sites using Django for the backend
+      and have worked on two projects utilizing it.  
+    </div>
   </div>
   <div class="center-block homepage-section" style="text-align: center;">
     <h1>Resume</h1>
-    <p>dvvfbbbfbffbf</p>
-    <p>dvvfbbbfbffbf</p>
-    <p>dvvfbbbfbffbf</p>
+    <iframe src="{% static 'resume.pdf' %}" height="700" width="500"></iframe>
+    <br>
+    <a href="{% static 'resume.pdf' %}" class="download" download>
+      Download
+    </a>
   </div>
   <div class="center-block homepage-section" style="text-align: center;">
-    <h1>Skills Learned</h1>
-    <p>dvvfbbbfbffbf</p>
-    <p>dvvfbbbfbffbf</p>
-    <p>dvvfbbbfbffbf</p>
-  </div>
-  <div class="center-block homepage-section" style="text-align: center;">
-    <h1>Skills Wanting to Learn</h1>
-    <p>dvvfbbbfbffbf</p>
-    <p>dvvfbbbfbffbf</p>
-    <p>dvvfbbbfbffbf</p>
+    <h1 class="skills-header">Skills</h1>
+    <div class="col-lg-4 skill-block">
+      <h3>Learned</h3>
+    </div>
+    <div class="col-lg-3 skill-block">
+      <h3>Need Work</h3>
+    </div>
+    <div class="col-lg-4 skill-block">
+      <h3>Want to Learn</h3>
+    </div>
   </div>
   <div class="center-block homepage-section" style="text-align: center;">
     <h1>Contact</h1>
