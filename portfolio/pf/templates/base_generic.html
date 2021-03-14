@@ -11,6 +11,11 @@
   <!-- Add additional CSS in static file -->
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'font-awesome/css/all.css' %}">
+  <link rel="stylesheet" href="{% static 'font-awesome/css/solid.css' %}">
+  <link rel="stylesheet" href="{% static 'font-awesome/css/regular.css' %}">
+  <link rel="stylesheet" href="{% static 'font-awesome/css/brands.css' %}">
+  <link rel="stylesheet" href="{% static 'font-awesome/css/fontawesome.css' %}">
 </head>
 <body>
   <div class="container-fluid">
@@ -27,7 +32,24 @@
     </div><br><br>
     <div class="col-lg-10 center-block content">{% block content %}{% endblock %}</div>
     <div class="col-lg-10 center-block footer">
-      fbfghfggfgf
+      <h5>Links:</h5>
+      <div>
+        <div class="sm-link">
+          <a href="https://github.com/mike11695"><i class="fab fa-github icon"></i></a>
+        </div>
+        <div class="sm-link">
+          <a href="https://www.linkedin.com/in/michael-lopez-86a686135/"><i class="fab fa-linkedin icon"></i></a>
+        </div>
+        <div class="sm-link">
+          <a href="https://discord.gg/T5KDJ3tVJ4"><i class="fab fa-discord icon"></i></a>
+        </div>
+      </div>
+
+      <div class="credit">Site developed by Mike.<br>
+        Credit to Avataaars for the profile picture.<br>
+        Credit to Font Awesome for the icons.<br>
+        Credit to Google for the fonts.
+      </div>
     </div>
   </div>
 </body>

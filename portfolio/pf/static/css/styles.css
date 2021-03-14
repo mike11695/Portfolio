@@ -201,3 +201,26 @@ label {
   margin-left: auto;
   margin-right: auto;
 }
+
+.sm-link {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.sm-link:last-child {
+  margin-right: 0px;
+}
+
+.sm-link a {
+  color: black;
+}
+
+.icon {
+  font-size: 36px;
+}
+
+.credit {
+  display: block;
+  font-size: 10px;
+  margin-top: 10px;
+}
