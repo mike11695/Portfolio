@@ -165,6 +165,99 @@ h1, h3 {
 .skill-icon {
   width: 50px;
   height: 50px;
+  font-size: 42px;
+}
+
+.atom:hover i {
+  color: #4fc96f;
+}
+
+.bootstrap:hover i {
+  color: #a26abd;
+}
+
+.css:hover i {
+  color: #00aad9;
+}
+
+.django:hover i {
+  color: #004f12;
+}
+
+.heroku:hover i {
+  color: #5a288f;
+}
+
+.html:hover i {
+  color: #f7924f;
+}
+
+.java:hover i {
+  color: #76afb3;
+}
+
+.javascript:hover i {
+  color: #d6d660;
+}
+
+.linux:hover i {
+  color: #48b8cf;
+}
+
+.python:hover i {
+  color: #dedb23;
+}
+
+.ror:hover i {
+  color: #b00000;
+}
+
+.ruby:hover i {
+  color: #b00000;
+}
+
+.windows:hover i {
+  color: #1fdde0;
+}
+
+.android-studio:hover i {
+  color: #36e083;
+}
+
+.c-plus-plus:hover i {
+  color: #2b83b5;
+}
+
+.docker:hover i {
+  color: #38b1f5;
+}
+
+.firebase:hover i {
+  color: #ffbf00;
+}
+
+.jquery:hover i {
+  color: #145aa6;
+}
+
+.mysql:hover i {
+  color: #e6b70e;
+}
+
+.node-js:hover i {
+  color: #7abf58;
+}
+
+.angular:hover i {
+  color: #de1f1f;
+}
+
+.aws:hover i {
+  color: #e6b70e;
+}
+
+.react:hover i {
+  color: #64d6de;
 }
 
 .form-container {
