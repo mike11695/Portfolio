@@ -1,7 +1,9 @@
 from django.shortcuts import render
-from django.core.mail import send_mail, BadHeaderError
+from django.core.mail import send_mail, BadHeaderError, EmailMessage
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
+from django.shortcuts import redirect
+from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
@@ -14,20 +16,20 @@ def send_email(request, id=None):
         sender_name = request.POST.get('fullname')
         sender_email = request.POST.get('email')
         email_subject = request.POST.get('subject')
-        email_content = request.POST.get('content')
+        email_content = request.POST.get('content') + "<br><br> E-mail from " + sender_email
 
         #Create the email and send it
         try:
             validate_email(sender_email)
+            email = EmailMessage(
+                email_subject,
+                email_content,
+                sender_email,
+                ['malopez1195@gmail.com'])
+            email.content_subtype = "html"
 
             try:
-                send_mail(
-                    email_subject,
-                    email_content,
-                    sender_email,
-                    ['malopez1195@gmail.com'],
-                    fail_silently=False,
-                )
+                email.send()
 
                 #redirect to index page
                 return redirect('index')
