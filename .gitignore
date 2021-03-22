@@ -1,2 +1,8 @@
 #ignore settings.py
 portfolio/portfolio/settings.py
+
+# Text backup files
+*.bak
+
+# Database
+*.sqlite3
