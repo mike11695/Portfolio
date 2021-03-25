@@ -5,7 +5,7 @@ from django.core.exceptions import ValidationError
 from django.shortcuts import redirect
 from django.http import HttpResponse
 
-# Create your views here.
+# View for the ndex page aka home page
 def index(request):
     # Render the HTML template index.html
     return render(request, 'index.html')
@@ -39,3 +39,8 @@ def send_email(request, id=None):
             return HttpResponse('Invalid e-mail address given')
     else:
         return HttpResponse('Something went wrong!', status=404)
+
+#page for projects that I've finished
+def projects(request):
+    # Render the HTML template projects.html
+    return render(request, 'projects/projects.html')

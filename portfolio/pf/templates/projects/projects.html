@@ -1,0 +1,30 @@
+{% extends "base_generic.html" %}
+  {% load static %}
+{% block content %}
+  <div class="center-block project-section" style="text-align: center;">
+    <h1 class="skills-header">My Projects</h1>
+    <div class="col-lg-8 center-block projects-overview">
+      These are all of the projects that I am currently working on or have worked
+      on.  They are ordered by current projects listed at the top, while older
+      projects are listed below them.  Click on a project's title to view more
+      information on them.
+    </div>
+  </div>
+  <div class="center-block project-section" style="text-align: center;">
+    <h1>List.it</h1>
+    <iframe src="{% static 'SPFR.pdf' %}" height="700" width="500"></iframe>
+    <br>
+    <a href="{% static 'SPFR.pdf' %}" class="download" download>
+      Download
+    </a>
+  </div>
+  <div class="center-block project-section" style="text-align: center;">
+    <h1>PetTP</h1>
+  </div>
+  <div class="center-block project-section" style="text-align: center;">
+    <h1>StepAPP</h1>
+  </div>
+  <div class="center-block project-section" style="text-align: center;">
+    <h1>Autograder</h1>
+  </div>
+{% endblock %}
