@@ -12,7 +12,40 @@
   </div>
   <div class="center-block project-section" style="text-align: center;">
     <h1>List.it</h1>
-    <iframe src="{% static 'SPFR.pdf' %}" height="700" width="500"></iframe>
+    <div class="project-imgs">
+      <a id="left-arrow-btn"><i class="fas fa-arrow-left arrow"></i></a>
+      <div class="ind-project-img"><img class="listit-img"
+        src="{% static 'listit/userfeatures.png' %}"></img></div>
+      <div class="ind-project-img"><img class="listit-img"
+        src="{% static 'listit/offlistings.png' %}"></img></div>
+      <div class="ind-project-img"><img class="listit-img"
+        src="{% static 'listit/auctionlistings.png' %}"></img></div>
+      <div class="ind-project-img"><img class="listit-img"
+        src="{% static 'listit/wishlistlistings.png' %}"></img></div>
+      <div class="ind-project-img"><img class="listit-img"
+        src="{% static 'listit/search.png' %}"></img></div>
+      <div class="ind-project-img"><img class="listit-img"
+        src="{% static 'listit/notifications.png' %}"></img></div>
+      <div class="ind-project-img"><img class="listit-img"
+        src="{% static 'listit/conversation.png' %}"></img></div>
+      <div class="ind-project-img"><img class="listit-img"
+        src="{% static 'listit/events.png' %}"></img></div>
+      <a id="right-arrow-btn"><i class="fas fa-arrow-right arrow"></i></a>
+      <br>
+      <div class="image-tracker">
+        <i class="fas fa-circle circ"></i>
+        <i class="fas fa-circle circ"></i>
+        <i class="fas fa-circle circ"></i>
+        <i class="fas fa-circle circ"></i>
+        <i class="fas fa-circle circ"></i>
+        <i class="fas fa-circle circ"></i>
+        <i class="fas fa-circle circ"></i>
+        <i class="fas fa-circle circ"></i>
+      </div>
+    </div>
+    <div class="iframe-container">
+      <iframe src="{% static 'SPFR.pdf' %}"></iframe>
+    </div>
     <br>
     <a href="{% static 'SPFR.pdf' %}" class="download" download>
       Download

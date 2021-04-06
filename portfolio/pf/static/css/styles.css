@@ -82,7 +82,8 @@ body {
 }
 
 .project-section:nth-child(2n) {
-  background: grey;
+  background: #c7c7c7;
+  background: url("/static/greybg.webp") no-repeat fixed center;
   color: black;
   box-shadow:
     inset 0px 12px 15px -10px black,
@@ -328,4 +329,75 @@ label {
 
 .projects-overview {
   text-align: center;
+}
+
+.project-imgs {
+  margin: 0px 20px 15px 20px;
+}
+
+.arrow {
+  display: inline-block;
+  font-size: 30px;
+  z-index: 1;
+}
+
+.ind-project-img {
+  display: none;
+  margin: 0px;
+  z-index: 0;
+}
+
+.inactive-img {
+  display: none;
+}
+
+.image-tracker {
+  margin-top: 10px;
+}
+
+.circ {
+  display: inline-block;
+  margin-left: 3px;
+  font-size: 12px;
+}
+
+.circ:last-child {
+  margin-left: none;
+}
+
+.active-circ {
+  color: #7387c7;
+}
+
+.inactive-circ {
+  color: black;
+}
+
+#left-arrow-btn {
+  display: inline-block;
+  margin-left: -40px;
+  z-index: 1;
+}
+
+#right-arrow-btn {
+  display: inline-block;
+  margin-right: -40px;
+  z-index: 1;
+}
+
+.iframe-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 50.25%;
+}
+
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }

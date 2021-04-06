@@ -36,7 +36,9 @@
   </div>
   <div class="center-block homepage-section" style="text-align: center;">
     <h1>Resume</h1>
-    <iframe src="{% static 'resume.pdf' %}" height="700" width="500"></iframe>
+    <div class="iframe-container">
+      <iframe src="{% static 'resume.pdf' %}" height="700" width="500"></iframe>
+    </div>
     <br>
     <a href="{% static 'resume.pdf' %}" class="download" download>
       Download
