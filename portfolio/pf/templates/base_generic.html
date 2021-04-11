@@ -22,16 +22,28 @@
 <body>
   <div class="container-fluid">
     <div class="site-header">
-      <h3 class="navbar-header">Mike's Portfolio</h3>
+      <div class="navbar-header">Mike's Portfolio</div>
       {% block navbar %}
         <ul class="navigation">
-          <li><a href="{% url 'index' %}">Home</a></li>
-          <li><a href="{% url 'projects' %}">Projects</a></li>
-          <li><a href="">Practice</a></li>
-          <li><a href="">Blog</a></li>
+          <li><a href="{% url 'index' %}">
+            <span class="nav-name">Home</span>
+            <span class="nav-icon"><i class="fas fa-home"></i></span>
+          </a></li>
+          <li><a href="{% url 'projects' %}">
+            <span class="nav-name">Projects</span>
+            <span class="nav-icon"><i class="fas fa-project-diagram"></i></span>
+          </a></li>
+          <li><a href="">
+            <span class="nav-name">Practice</span>
+            <span class="nav-icon"><i class="fas fa-brain"></i></span>
+          </a></li>
+          <li><a href="">
+            <span class="nav-name">Blog</span>
+            <span class="nav-icon"><i class="fas fa-blog"></i></span>
+          </a></li>
         </ul>
       {% endblock %}
-    </div><br><br>
+    </div>
     <div class="col-lg-10 center-block content">{% block content %}{% endblock %}</div>
     <div class="col-lg-10 center-block footer">
       <h5>Links:</h5>

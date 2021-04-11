@@ -13,11 +13,66 @@ body {
   z-index: 1;
   background-color: white;
   margin-left: -15px;
+  display: block;
 }
 
 .navbar-header {
   display: inline-block;
   margin-top: 3px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 30px;
+}
+
+@media (max-width: 600px) {
+  .navbar-header {
+    text-align: center;
+    display: block;
+  }
+
+  .navigation {
+    float: none !important;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navigation li {
+    display: inline-block;
+    padding: 5px 10px 5px 10px;
+    margin-bottom: -10px;
+    margin-right: 40px;
+  }
+
+  .navigation li:last-child {
+    margin-right: 0px;
+  }
+
+  .navigation li:hover {
+    background-color: transparent !important;
+  }
+
+  .navigation a {
+    color: grey;
+  }
+
+  .navigation a:hover {
+    color: black !important;
+  }
+
+  .nav-name {
+    display: none;
+  }
+
+  .nav-icon {
+    display: inline-block !important;
+  }
+
+  .nav-icon i {
+    font-size: 30px;
+  }
+}
+
+.nav-icon {
+  display: none;
 }
 
 .navigation {
@@ -30,15 +85,16 @@ body {
 
 .navigation li {
   display: inline-block;
-  margin-right: 20px;
-  border-right: 1px solid black;
-  padding-right: 20px;
+  padding: 5px 10px 5px 10px;
+  margin-bottom: -10px;
 }
 
-.navigation li:last-child {
-  margin-right: 0px;
-  border-right: none;
-  padding-right: 0px;
+.navigation li:hover {
+  background-color: #bababa;
+}
+
+.navigation a:hover {
+  text-decoration: none;
 }
 
 .content {
@@ -46,10 +102,14 @@ body {
   z-index: 0;
   margin-left: auto;
   margin-right: auto;
+  height: 100%;
   box-shadow: 0px 0px 30px 0px black;
-  padding: 0px;
-  background: url("/static/bg.png") no-repeat fixed center;
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
   background-color: white;
+  position: sticky;
 }
 
 .footer {
@@ -74,7 +134,7 @@ body {
 }
 
 .homepage-section:nth-child(2n) {
-  background: none;
+  background: url("/static/greybg.webp") no-repeat fixed center;
   color: black;
   box-shadow:
     inset 0px 12px 15px -10px black,
@@ -116,6 +176,16 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 15px;
+}
+
+.skills-header:first-of-type {
+  margin-top: 50px;
+}
+
+@media (max-width: 590px) {
+  .skills-header:first-of-type {
+    margin-top: 100px;
+  }
 }
 
 .my-picture-container {
@@ -345,6 +415,10 @@ label {
   display: none;
   margin: 0px;
   z-index: 0;
+}
+
+.ind-project-img img {
+  border: 5px solid black;
 }
 
 .inactive-img {
