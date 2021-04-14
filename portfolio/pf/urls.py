@@ -6,5 +6,11 @@ urlpatterns = [
     path('email', views.send_email, name='send-email'),
 
     #projects
-    path('projects', views.projects, name="projects")
+    path('projects', views.projects, name="projects"),
+
+    #Practice
+    #path('practice', views.practice, name="practice"),
+
+    #Blog
+    #path('blog', views.blog, name="blog"),
 ]
