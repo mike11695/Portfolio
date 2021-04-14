@@ -429,19 +429,21 @@ iframe {
     text-align: center;
     display: block;
     margin-bottom: -10px;
+    font-size: 24px;
   }
 
   .navigation {
     float: none !important;
     width: 100%;
     text-align: center;
+    padding-bottom: -10px;
   }
 
   .navigation li {
     display: inline-block;
-    padding: 5px 10px 5px 10px;
-    margin-bottom: -10px;
-    margin-right: 40px;
+    padding: 5px 10px 0px 10px;
+    margin-bottom: 0px;
+    margin-right: 25px;
   }
 
   .navigation li:last-child {
@@ -469,14 +471,75 @@ iframe {
   }
 
   .nav-icon i {
-    font-size: 30px;
+    font-size: 24px;
   }
 
   .site-header {
     padding: 0px;
+    height: 77px;
   }
 
   .skills-header:first-of-type {
-    margin-top: 80px;
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar-header {
+    text-align: center;
+    display: block;
+    margin-bottom: -10px;
+    font-size: 24px;
+  }
+
+  .navigation {
+    float: none !important;
+    width: 100%;
+    text-align: center;
+    padding-bottom: -10px;
+  }
+
+  .navigation li {
+    display: inline-block;
+    padding: 5px 10px 0px 10px;
+    margin-bottom: 0px;
+    margin-right: 25px;
+  }
+
+  .navigation li:last-child {
+    margin-right: 0px;
+  }
+
+  .navigation li:hover {
+    background-color: transparent !important;
+  }
+
+  .navigation a {
+    color: grey;
+  }
+
+  .navigation a:hover {
+    color: black !important;
+  }
+
+  .nav-name {
+    display: none;
+  }
+
+  .nav-icon {
+    display: inline-block !important;
+  }
+
+  .nav-icon i {
+    font-size: 24px;
+  }
+
+  .site-header {
+    padding: 0px;
+    height: 77px;
+  }
+
+  .skills-header:first-of-type {
+    margin-top: 100px;
   }
 }
