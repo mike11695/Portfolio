@@ -9,7 +9,7 @@ urlpatterns = [
     path('projects', views.projects, name="projects"),
 
     #Practice
-    #path('practice', views.practice, name="practice"),
+    path('practice', views.practice, name="practice"),
 
     #Blog
     #path('blog', views.blog, name="blog"),

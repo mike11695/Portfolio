@@ -44,3 +44,8 @@ def send_email(request, id=None):
 def projects(request):
     # Render the HTML template projects.html
     return render(request, 'projects/projects.html')
+
+#page for practice projects and exercises
+def practice(request):
+    # Render the HTML template practice.html
+    return render(request, 'practice/practice.html')

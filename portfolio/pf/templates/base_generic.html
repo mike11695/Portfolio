@@ -22,7 +22,7 @@
 <body>
   <div class="container-fluid">
     <div class="site-header">
-      <div class="navbar-header">Mike's Portfolio</div>
+      <div class="navbar-header"><a href="{% url 'index' %}">Mike's Portfolio</a></div>
       {% block navbar %}
         <ul class="navigation">
           <li><a href="{% url 'index' %}">
@@ -33,7 +33,7 @@
             <span class="nav-name">Projects</span>
             <span class="nav-icon"><i class="fas fa-project-diagram"></i></span>
           </a></li>
-          <li><a href="">
+          <li><a href="{% url 'practice' %}">
             <span class="nav-name">Practice</span>
             <span class="nav-icon"><i class="fas fa-brain"></i></span>
           </a></li>
