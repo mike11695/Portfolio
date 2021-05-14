@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -28,7 +29,7 @@ class Message(models.Model):
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE, related_name="messages")
     title = models.TextField(max_length=100, help_text="Title of the message")
     content = models.TextField(max_length=500, help_text="Content of the message")
-    datePublished = models.DateTimeField()
+    datePublished = models.DateTimeField(auto_now_add=True, verbose_name="Date Published")
     image = models.ImageField(upload_to="images", width_field='width', height_field='height')
 
     def __str__(self):
