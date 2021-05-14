@@ -37,3 +37,44 @@ class BlogFormTest(MyTestCase):
         data = {'blogName': blog_name, 'catagories': [str(self.cat1.id), str(self.cat2.id)]}
         form = BlogForm(data)
         self.assertTrue(form.is_valid())
+
+    #Test to ensure a blog cannot be created without a name for blog
+    def test_invalid_blog_creation_no_blog_name(self):
+        user = self.admin
+        blog_name = "My first blog"
+        data = {'catagories': [str(self.cat1.id), str(self.cat2.id)]}
+        form = BlogForm(data)
+        self.assertFalse(form.is_valid())
+
+    #Test to ensure a blog cannot be created without a catagory selected
+    def test_invalid_blog_creation_no_catagory_selected(self):
+        user = self.admin
+        blog_name = "My first blog"
+        data = {'blogName': blog_name}
+        form = BlogForm(data)
+        self.assertFalse(form.is_valid())
+
+    #Test to ensure a blog cannot be created with a name longer than 100 chars
+    def test_invalid_blog_creation_name_too_long(self):
+        user = self.admin
+        blog_name = ("My first blog has a ridiculously long name and I'm " +
+            "not embarrassed by it lol AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" +
+            "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+        data = {'blogName': blog_name, 'catagories': [str(self.cat1.id), str(self.cat2.id)]}
+        form = BlogForm(data)
+        self.assertFalse(form.is_valid())
+
+    #Test to ensure that blog name field help text is correct
+    def test_blog_creation_blog_name_help_text(self):
+        form = BlogForm()
+        self.assertEqual(form.fields['blogName'].help_text, "Name For the Blog")
+
+    #Test to ensure that blog name label text is correct
+    def test_blog_creation_blog_name_label_text(self):
+        form = BlogForm()
+        self.assertEqual(form.fields['blogName'].label, "Blog Name")
+
+    #Test to ensure that blog catagories field help text is correct
+    def test_blog_creation_catagories_help_text(self):
+        form = BlogForm()
+        self.assertEqual(form.fields['catagories'].help_text, "Catagories Relevant to Blog Being Created")
