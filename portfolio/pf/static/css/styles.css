@@ -14,6 +14,7 @@ body {
   background-color: white;
   margin-left: -15px;
   display: block;
+  height: 65px;
 }
 
 .navbar-header {
@@ -81,15 +82,17 @@ body {
   padding: 15px;
   text-align: center;
   background-color: #a6a6a6;
+  height: 170px;
 }
 
-.homepage-section, .project-section, .practice-section {
+.homepage-section, .project-section, .practice-section, .blog-section {
   background-color: white;
   padding: 20px;
   color: black;
 }
 
-.homepage-section:first-child, .project-section:first-child, .practice-section:first-child {
+.homepage-section:first-child, .project-section:first-child,
+.practice-section:first-child, .blog-section:first-child {
   padding-top: 40px;
 }
 
@@ -101,13 +104,18 @@ body {
     inset 0px -12px 15px -10px black;
 }
 
-.project-section:nth-child(2n), .practice-section:nth-child(2n) {
+.project-section:nth-child(2n), .practice-section:nth-child(2n),
+.blog-section:nth-child(2n) {
   background: #c7c7c7;
   background: url("/static/greybg.webp") no-repeat fixed center;
   color: black;
   box-shadow:
     inset 0px 12px 15px -10px black,
     inset 0px -12px 15px -10px black;
+}
+
+.practice-section:first-child, .blog-section:first-child {
+  min-height: calc(100vh - 170px);
 }
 
 .download {

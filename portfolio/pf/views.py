@@ -49,3 +49,8 @@ def projects(request):
 def practice(request):
     # Render the HTML template practice.html
     return render(request, 'practice/practice.html')
+
+#page for blogs, change to ListView once models and forms are implemented
+def blogs(request):
+    # Render the HTML template blogs.html
+    return render(request, 'blogs/blogs.html')

@@ -12,5 +12,5 @@ urlpatterns = [
     path('practice', views.practice, name="practice"),
 
     #Blog
-    #path('blog', views.blog, name="blog"),
+    path('blogs', views.blogs, name="blogs"),
 ]
