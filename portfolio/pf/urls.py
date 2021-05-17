@@ -12,5 +12,5 @@ urlpatterns = [
     path('practice', views.practice, name="practice"),
 
     #Blog
-    path('blogs', views.blogs, name="blogs"),
+    path('blogs', views.BlogListView.as_view(), name="blogs"),
 ]

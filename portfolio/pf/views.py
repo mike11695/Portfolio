@@ -4,6 +4,11 @@ from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 from django.shortcuts import redirect
 from django.http import HttpResponse
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormMixin
+from django.views import generic
+
+from pf.models import Catagory, Blog, Message, User
 
 # View for the ndex page aka home page
 def index(request):
@@ -51,6 +56,12 @@ def practice(request):
     return render(request, 'practice/practice.html')
 
 #page for blogs, change to ListView once models and forms are implemented
-def blogs(request):
-    # Render the HTML template blogs.html
-    return render(request, 'blogs/blogs.html')
+class BlogListView(generic.ListView):
+    model = Blog
+    context_object_name = 'blogs'
+    template_name = "blogs/blogs.html"
+    paginate_by = 5
+
+    #Obtains all created blogs
+    def get_queryset(self):
+        return Blog.objects.all().order_by('blogName')
