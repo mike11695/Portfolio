@@ -440,6 +440,32 @@ iframe {
   height: 100%;
 }
 
+.blog-container {
+  text-align: left;
+  padding: 20px;
+  border: 2px solid grey;
+  border-radius: 30px;
+  margin-bottom: 15px;
+}
+
+.blog-container h3 {
+  border-bottom: 1px solid grey;
+  padding-bottom: 5px;
+}
+
+.blog-container h3 a {
+  color: blue;
+}
+
+.blog-container h3 a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.recent-post {
+  float: right !important;
+}
+
 @media (max-width: 600px) {
   .navbar-header {
     text-align: center;

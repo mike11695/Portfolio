@@ -4,7 +4,53 @@
   <div class="center-block blog-section" style="text-align: center;">
     <h1 class="skills-header">Blogs</h1>
     <div class="col-lg-8 center-block blogs-overview">
-      Coming soon!
+      {% if blogs %}
+        {% for blog in blogs %}
+          <div class="blog-container">
+            <h3><a href="">{{ blog.blogName }}</a></h3>
+            <span>Number of posts: {{ blog.messages.count }}</span>
+            <span class="recent-post">Most recent post:
+              {% if blog.messages.count > 0 %}
+                <a href="">{{ blog.messages.last }}</a>
+              {% else %}
+                None
+              {% endif %}
+            </span>
+            {% if blog.catagories %}
+              <div>
+                Catagories:
+                {% for catagory in blog.catagories.all %}
+                  {% if forloop.last %}
+                    <a href="">{{ catagory }}</a>
+                  {% else %}
+                    <a href="">{{ catagory }}</a>,
+                  {% endif %}
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      <br>
+      <div>
+          <div class="step-links">
+              {% if page_obj.has_previous %}
+                  <a href="?page=1">&laquo; First</a>
+                  <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+              {% endif %}
+
+              <div class="current">
+                  Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+              </div>
+
+              {% if page_obj.has_next %}
+                  <a href="?page={{ page_obj.next_page_number }}">Next</a>
+                  <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+              {% endif %}
+          </div>
+        </div>
+      {% else %}
+        <p style="text-align: center;">Coming soon!</p>
+      {% endif %}
     </div><br>
   </div>
 {% endblock %}
