@@ -5,10 +5,12 @@ from django.core.exceptions import ValidationError
 from django.shortcuts import redirect
 from django.http import HttpResponse
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormMixin
 from django.views import generic
 
 from pf.models import Catagory, Blog, Message, User
+from pf.forms import BlogForm
 
 # View for the ndex page aka home page
 def index(request):
@@ -65,3 +67,25 @@ class BlogListView(generic.ListView):
     #Obtains all created blogs
     def get_queryset(self):
         return Blog.objects.all().order_by('blogName')
+
+#Form view to create a new blog
+@login_required(login_url='/accounts/login/')
+def create_blog(request):
+    if request.user.is_superuser:
+        if request.method == 'POST':
+            form = BlogForm(request.POST)
+            if form.is_valid():
+                created_blog = form.save()
+
+                #add the catagories from the form to image
+                clean_catagories = form.cleaned_data.get('catagories')
+                for cat in clean_catagories:
+                    created_blog.catagories.add(cat)
+
+                #Redirect to blog list view
+                return redirect('blogs')
+        else:
+            form = BlogForm()
+        return render(request, 'blogs/create_blog.html', {'form': form})
+    else:
+        return redirect('index')

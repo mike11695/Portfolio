@@ -13,4 +13,5 @@ urlpatterns = [
 
     #Blog
     path('blogs', views.BlogListView.as_view(), name="blogs"),
+    path('blogs/create', views.create_blog, name="blog-create"),
 ]

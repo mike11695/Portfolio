@@ -141,3 +141,6 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'malopez1195@gmail.com'
 EMAIL_HOST_PASSWORD = 'timmythecat36'
+
+# Redirect to home URL after login (Default redirects to /accounts/profile/)
+LOGIN_REDIRECT_URL = '/'

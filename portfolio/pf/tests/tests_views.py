@@ -73,10 +73,17 @@ class BlogsViewTest(MyTestCase):
 
 #Tests for superuser to create a new blog
 class CreateBlogViewTest(MyTestCase):
-    #Test to ensure that a user must be a super user to create a blog
-    def test_redirect_if_not_superuser(self):
+    #Test to ensure that a user must be logged in to create a blog
+    def test_redirect_if_not_logged_in(self):
         response = self.client.get(reverse('blog-create'))
         self.assertRedirects(response, '/accounts/login/?next=/home/blogs/create')
+
+    #Test to ensure that a user must be a super user to create a blog
+    def test_redirect_if_not_superuser(self):
+        login = self.client.login(username='notmike', password='example')
+        self.assertTrue(login)
+        response = self.client.get(reverse('blog-create'))
+        self.assertRedirects(response, '/home/')
 
     #Test to ensure a superuser is not redirected
     def test_no_redirect_if_superuser(self):
@@ -91,6 +98,7 @@ class CreateBlogViewTest(MyTestCase):
         self.assertTrue(login)
         response = self.client.get(reverse('blog-create'))
         self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'blogs/create_blog.html')
 
     #Test to ensure that a superuser is able to create a new blog succesfully
     def test_blog_is_created(self):
@@ -103,4 +111,5 @@ class CreateBlogViewTest(MyTestCase):
         self.assertEqual(post_response.status_code, 302)
         new_blog = Blog.objects.last()
         self.assertEqual(new_blog.blogName, "Test Blog")
-        self.assertEqual(new_blog.catagories, [str(self.cat1.id), str(self.cat3.id)])
+        self.assertTrue(new_blog.catagories.filter(id=self.cat1.id).exists())
+        self.assertTrue(new_blog.catagories.filter(id=self.cat3.id).exists())
