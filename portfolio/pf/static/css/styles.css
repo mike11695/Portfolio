@@ -466,6 +466,27 @@ iframe {
   float: right !important;
 }
 
+.create-btn {
+  padding: 10px;
+  background: blue;
+  color: white;
+  border-radius: 20px;
+  width: 50%;
+}
+
+.create-btn a {
+  color: white;
+}
+
+.create-btn:hover {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 @media (max-width: 600px) {
   .navbar-header {
     text-align: center;
