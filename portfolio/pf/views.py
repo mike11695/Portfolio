@@ -66,7 +66,7 @@ class BlogListView(generic.ListView):
 
     #Obtains all created blogs
     def get_queryset(self):
-        return Blog.objects.all().order_by('blogName')
+        return Blog.objects.all().order_by('id')
 
 #Form view to create a new blog
 @login_required(login_url='/accounts/login/')

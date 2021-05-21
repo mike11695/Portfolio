@@ -487,6 +487,53 @@ a:hover {
   text-decoration: none;
 }
 
+.mtm-dropdown {
+  display: inline-block;
+  height: 200px;
+  overflow-y: scroll;
+  border: 1px solid grey;
+  padding-left: 0px;
+  padding-top: 10px;
+  padding-right: 5px;
+  background: white;
+  text-align: left;
+  margin-top: 15px;
+  margin-right: -4px;
+  width: 183px;
+}
+
+.mtm-dropdown ul {
+  list-style-type: none;
+  padding-left: 5px;
+  padding-bottom: -20px;
+}
+
+.mtm-dropdown li {
+  margin: -5px 0px -5px 0px;
+}
+
+.mtm-dropdown input[type="checkbox"]{
+  width: 15px;
+  height: 15px;
+}
+
+.superuser-form-container {
+  background-color: lightgrey;
+  border: 3px solid grey;
+  padding: 15px;
+  border-radius: 30px;
+}
+
+.form-submit-btn {
+  padding: 5px;
+  background: blue;
+  color: white;
+  border-radius: 20px;
+  width: 90%;
+  border: none;
+  margin-top: 5px;
+}
+
 @media (max-width: 600px) {
   .navbar-header {
     text-align: center;
