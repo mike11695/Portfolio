@@ -89,3 +89,17 @@ def create_blog(request):
         return render(request, 'blogs/create_blog.html', {'form': form})
     else:
         return redirect('index')
+
+#Detailed view for a blog that shows messages related to blog
+class BlogDetailView(generic.DetailView):
+    model = Blog
+    context_object_name = 'blog'
+    template_name = "blogs/blog.html"
+
+    #Retrieve messages related to blog
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        obj = self.get_object()
+        context['messages'] = Message.objects.filter(blog=obj)
+
+        return context

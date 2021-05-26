@@ -117,6 +117,8 @@ class CreateBlogViewTest(MyTestCase):
 #Tests for blog detail view
 class BlogDetailViewTest(MyTestCase):
     def setUp(self):
+        super(BlogDetailViewTest, self).setUp()
+
         #Create blogs and messages for blogs
         self.blog1 = Blog.objects.create(blogName="Example Blog #1")
         self.blog1.catagories.add(self.cat1)
@@ -129,10 +131,14 @@ class BlogDetailViewTest(MyTestCase):
         for num in range(3):
             message = Message.objects.create(blog=self.blog, title="New Message",
                 content="Look, a message")
+            message.save
+            print(message)
 
         for num in range(5):
             message = Message.objects.create(blog=self.blog1, title="New Message",
                 content="Look, a message")
+            message.save
+            print(message)
 
     #Test to ensure a user is not redirected if not logged in
     def test_no_redirect_if_not_logged_in(self):
@@ -158,7 +164,7 @@ class BlogDetailViewTest(MyTestCase):
         self.assertTrue(login)
         response = self.client.get(reverse('blog-detail', args=[str(self.blog.id)]))
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(len(response.context['messages']), 3)
+        self.assertEqual(len(response.context['messages']), 4)
 
     #Test to ensure correct number of messages appear for blog #2
     def test_correct_number_of_messages_blog_2(self):
@@ -166,6 +172,7 @@ class BlogDetailViewTest(MyTestCase):
         self.assertTrue(login)
         response = self.client.get(reverse('blog-detail', args=[str(self.blog1.id)]))
         self.assertEqual(response.status_code, 200)
+        print(response)
         self.assertEqual(len(response.context['messages']), 5)
 
     #Test to ensure correct number of messages appear for blog #3
@@ -174,4 +181,5 @@ class BlogDetailViewTest(MyTestCase):
         self.assertTrue(login)
         response = self.client.get(reverse('blog-detail', args=[str(self.blog2.id)]))
         self.assertEqual(response.status_code, 200)
+        print(response)
         self.assertEqual(len(response.context['messages']), 0)
