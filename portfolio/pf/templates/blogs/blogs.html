@@ -51,8 +51,10 @@
       {% else %}
         <p style="text-align: center;">Coming soon!</p>
       {% endif %}
-      <br><a href="{% url 'blog-create' %}"><div class="create-btn center-block">
-        New Blog</div></a>
+      {% if request.user.is_superuser %}
+        <br><a href="{% url 'blog-create' %}"><div class="create-btn center-block">
+          New Blog</div></a>
+      {% endif %}
     </div><br>
   </div>
 {% endblock %}

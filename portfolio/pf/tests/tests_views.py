@@ -113,3 +113,65 @@ class CreateBlogViewTest(MyTestCase):
         self.assertEqual(new_blog.blogName, "Test Blog")
         self.assertTrue(new_blog.catagories.filter(id=self.cat1.id).exists())
         self.assertTrue(new_blog.catagories.filter(id=self.cat3.id).exists())
+
+#Tests for blog detail view
+class BlogDetailViewTest(MyTestCase):
+    def setUp(self):
+        #Create blogs and messages for blogs
+        self.blog1 = Blog.objects.create(blogName="Example Blog #1")
+        self.blog1.catagories.add(self.cat1)
+        self.blog1.save
+
+        self.blog2 = Blog.objects.create(blogName="Example Blog #2")
+        self.blog2.catagories.add(self.cat3)
+        self.blog2.save
+
+        for num in range(3):
+            message = Message.objects.create(blog=self.blog, title="New Message",
+                content="Look, a message")
+
+        for num in range(5):
+            message = Message.objects.create(blog=self.blog1, title="New Message",
+                content="Look, a message")
+
+    #Test to ensure a user is not redirected if not logged in
+    def test_no_redirect_if_not_logged_in(self):
+        response = self.client.get(reverse('blog-detail', args=[str(self.blog.id)]))
+        self.assertEqual(response.status_code, 200)
+
+    #Test to ensure an admin is not redirected if logged in
+    def test_no_redirect_if_logged_in(self):
+        login = self.client.login(username='mike', password='example')
+        self.assertTrue(login)
+        response = self.client.get(reverse('blog-detail', args=[str(self.blog.id)]))
+        self.assertEqual(response.status_code, 200)
+
+    #Test to ensure right template is used/exists
+    def test_correct_template_used(self):
+        response = self.client.get(reverse('blog-detail', args=[str(self.blog.id)]))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'blogs/blog.html')
+
+    #Test to ensure correct number of messages appear for blog #1
+    def test_correct_number_of_messages_blog_1(self):
+        login = self.client.login(username='mike', password='example')
+        self.assertTrue(login)
+        response = self.client.get(reverse('blog-detail', args=[str(self.blog.id)]))
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.context['messages']), 3)
+
+    #Test to ensure correct number of messages appear for blog #2
+    def test_correct_number_of_messages_blog_2(self):
+        login = self.client.login(username='mike', password='example')
+        self.assertTrue(login)
+        response = self.client.get(reverse('blog-detail', args=[str(self.blog1.id)]))
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.context['messages']), 5)
+
+    #Test to ensure correct number of messages appear for blog #3
+    def test_correct_number_of_messages_blog_3(self):
+        login = self.client.login(username='mike', password='example')
+        self.assertTrue(login)
+        response = self.client.get(reverse('blog-detail', args=[str(self.blog2.id)]))
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.context['messages']), 0)
