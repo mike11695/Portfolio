@@ -7,7 +7,7 @@
       {% if blogs %}
         {% for blog in blogs %}
           <div class="blog-container">
-            <h3><a href="">{{ blog.blogName }}</a></h3>
+            <h3><a href="{% url 'blog-detail' pk=blog.pk %}">{{ blog.blogName }}</a></h3>
             <span>Number of posts: {{ blog.messages.count }}</span>
             <span class="recent-post">Most recent post:
               {% if blog.messages.count > 0 %}

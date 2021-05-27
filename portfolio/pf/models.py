@@ -31,6 +31,8 @@ class Message(models.Model):
     content = models.TextField(max_length=500, help_text="Content of the message")
     datePublished = models.DateTimeField(auto_now_add=True, verbose_name="Date Published")
     image = models.ImageField(upload_to="images", width_field='width', height_field='height')
+    width = models.IntegerField()
+    height = models.IntegerField()
 
     def __str__(self):
         #String for representing the message object.
